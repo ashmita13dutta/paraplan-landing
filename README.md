@@ -4,7 +4,7 @@ A responsive landing page for **ParaPlan**, an invented SaaS that helps Kolkata'
 clubs and housing societies track chanda (donations), volunteers and budgets.
 Built for the Sankar Group front-end internship assignment.
 
-**Live site:** _not deployed yet (add the link here after deploying)_
+**Live site:** https://ashmita13dutta.github.io/paraplan-landing/
 
 ## Screenshots
 
