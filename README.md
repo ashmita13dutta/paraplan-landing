@@ -57,7 +57,7 @@ screenshots/        desktop, tablet and phone captures
 5. Signature details: a red-white-red "lal-paar" stripe made from a single CSS gradient, a diya logo and feature icons drawn as inline SVG, a faint alpona-style ring behind the demo card, and rupee amounts grouped the Indian way with `Intl.NumberFormat('en-IN')`.
 6. Interactions: hamburger menu, live chanda tracker, monthly/yearly price toggle, plan buttons that pre-select the contact form, and form validation with error and success messages.
 7. Challenges solved: step numbers leaking from an `<ol>` reset, grey prices caused by CSS specificity, pricing cards not using tablet width, a logo wordmark split apart by flexbox `gap`, and demo names that were invented instead of typed (now a required field).
-8. Limits: there is no backend, so the form does not send data; it was checked in one browser at several widths, not yet on real phones or other browsers.
+8. Limits: there is no backend, so the form does not send data; it was checked in a desktop browser at several widths and on a real phone, but not yet in other browsers.
 
 ## Notes
 
