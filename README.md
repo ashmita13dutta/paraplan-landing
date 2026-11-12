@@ -63,4 +63,4 @@ screenshots/        desktop, tablet and phone captures
 
 - Sample content and placeholder names only. ParaPlan is not a real product, and the email address uses the reserved `.example` domain.
 - No passwords, API keys or private credentials are used anywhere.
-- AI tools were used for product decisions, developing the idea and writing the page's code, as the assignment permits.
+- AI tools were used while developing this project, as the assignment permits.
