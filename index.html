@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ParaPlan | Run your para's festival without the notebook chaos</title>
+  <meta name="description" content="ParaPlan helps neighbourhood clubs and housing societies track chanda, volunteers and budgets in one place.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%23c23b22' d='M3 14h18c0 4-3.5 6-9 6s-9-2-9-6z'/%3E%3Cpath fill='%23f2a900' d='M12 3c2 2.5 3 4 3 5.5a3 3 0 0 1-6 0C9 7 10 5.5 12 3z'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Navbar: logo, hamburger button (phones), links and Get Started button -->
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#hero" class="logo" aria-label="ParaPlan home">
+        <svg class="logo-mark" viewBox="0 0 24 24" aria-hidden="true">
+          <path class="lamp" d="M3 14h18c0 4-3.5 6-9 6s-9-2-9-6z"/>
+          <path class="flame" d="M12 3c2 2.5 3 4 3 5.5a3 3 0 0 1-6 0C9 7 10 5.5 12 3z"/>
+        </svg>
+        <span>Para<span class="logo-accent">Plan</span></span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Toggle menu"
+              aria-expanded="false" aria-controls="nav-menu">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav id="nav-menu" class="nav-menu" aria-label="Main">
+        <ul class="nav-links">
+          <li><a href="#features">Features</a></li>
+          <li><a href="#how-it-works">How it works</a></li>
+          <li><a href="#pricing">Pricing</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+        <a href="#contact" class="btn btn-primary">Get Started</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- Hero: headline, call-to-action buttons and the live chanda tracker demo -->
+    <section id="hero" class="hero">
+      <div class="container hero-inner">
+        <div class="hero-text">
+          <p class="eyebrow">For Kolkata&rsquo;s neighbourhood (para) clubs</p>
+          <h1>Run your para&rsquo;s festival without the <span class="mark">notebook chaos.</span></h1>
+          <p class="lead">
+            ParaPlan keeps chanda, volunteers and budgets in one place, so your committee
+            spends its time on the celebration, not the calculator.
+          </p>
+          <div class="hero-actions">
+            <a href="#contact" class="btn btn-primary" data-plan="Starter">Get Started Free</a>
+            <a href="#how-it-works" class="btn btn-outline">See how it works</a>
+          </div>
+          <ul class="trust">
+            <li>Free Starter plan</li>
+            <li>No card needed</li>
+            <li>Works on any phone</li>
+          </ul>
+        </div>
+
+        <div class="hero-visual">
+          <div class="demo" aria-labelledby="demo-title">
+            <div class="demo-head">
+              <span id="demo-title">Durga Puja 2026 · Chanda</span>
+              <span class="chip">Live demo</span>
+            </div>
+
+            <p class="demo-total">
+              <strong id="demo-collected">₹72,000</strong>
+              <span>of ₹1,20,000 goal</span>
+            </p>
+
+            <div id="demo-progress" class="progress" role="progressbar" aria-label="Chanda collected"
+                 aria-valuemin="0" aria-valuemax="100" aria-valuenow="60">
+              <div id="demo-bar" class="progress-bar" style="width: 60%"></div>
+            </div>
+            <p id="demo-percent" class="demo-percent">60% of goal collected</p>
+
+            <!-- Both fields are required; the rules are checked in js/main.js -->
+            <form id="chanda-form" class="demo-add" novalidate>
+              <label for="donor" class="sr-only">Your flat or name (required)</label>
+              <input id="donor" class="donor" type="text" maxlength="30" autocomplete="off" required
+                     placeholder="Flat or name (required)" aria-describedby="chanda-error">
+              <label for="amount" class="sr-only">Chanda amount in rupees</label>
+              <input id="amount" type="number" inputmode="numeric" min="1" required
+                     placeholder="Amount, e.g. 500" aria-describedby="chanda-error">
+              <button type="submit" class="btn btn-primary">Add chanda</button>
+            </form>
+            <p id="chanda-error" class="error" role="alert"></p>
+
+            <p class="demo-label">Recent chanda</p>
+            <ul id="demo-list" class="demo-list">
+              <li><span>Flat 4B</span><strong>₹2,000</strong></li>
+              <li><span>Mitra Kaku</span><strong>₹1,500</strong></li>
+              <li><span>Rina Di</span><strong>₹500</strong></li>
+            </ul>
+
+            <div class="demo-foot">
+              <span>Try it. Nothing is saved.</span>
+              <button type="button" id="demo-reset" class="link-btn">Reset</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features: six cards with inline SVG icons -->
+    <section id="features" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Features</p>
+          <h2>Everything your committee keeps in a notebook</h2>
+          <p>Six simple tools. No training needed.</p>
+        </div>
+
+        <div class="grid grid-3">
+          <article class="card feature">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M6 3h12v18l-3-2-3 2-3-2-3 2z"/>
+                <path d="M9 8h6M9 12h6"/>
+              </svg>
+            </div>
+            <h3>Chanda tracker</h3>
+            <p>Log every contribution in seconds and watch the total move towards your goal.</p>
+          </article>
+          <article class="card feature">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <circle cx="9" cy="8" r="3"/>
+                <path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/>
+                <circle cx="17" cy="9" r="2.4"/>
+                <path d="M17 14.5c2.5 0 4 1.8 4 4.5"/>
+              </svg>
+            </div>
+            <h3>Volunteer roster</h3>
+            <p>Give each volunteer a duty for each day, so nobody is double-booked.</p>
+          </article>
+          <article class="card feature">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 20h16"/>
+                <rect x="5" y="11" width="3" height="9" rx="0.8"/>
+                <rect x="10.5" y="5" width="3" height="15" rx="0.8"/>
+                <rect x="16" y="13" width="3" height="7" rx="0.8"/>
+              </svg>
+            </div>
+            <h3>Budget vs actual</h3>
+            <p>Compare planned and real spending on pandal, lights, food and more.</p>
+          </article>
+          <article class="card feature">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M3 12h18a9 9 0 0 1-18 0z"/>
+                <path d="M8.5 8c0-1.5 1.5-1.5 1.5-3M13.5 8c0-1.5 1.5-1.5 1.5-3"/>
+              </svg>
+            </div>
+            <h3>Bhog &amp; schedule</h3>
+            <p>Keep the daily programme and bhog timings in one shared timetable.</p>
+          </article>
+          <article class="card feature">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M4 5h16v11H10l-4 4v-4H4z"/>
+                <path d="M8 9h8M8 12h5"/>
+              </svg>
+            </div>
+            <h3>Shareable updates</h3>
+            <p>Copy a clean summary and paste it straight into your WhatsApp group.</p>
+          </article>
+          <article class="card feature">
+            <div class="icon">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <rect x="7" y="2.5" width="10" height="19" rx="2.2"/>
+                <path d="M11 18.5h2"/>
+              </svg>
+            </div>
+            <h3>Made for phones</h3>
+            <p>Works in any phone browser. Nothing to install.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- How it works: three steps in an ordered list -->
+    <section id="how-it-works" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">How it works</p>
+          <h2>From first meeting to final accounts in three steps</h2>
+          <p>ParaPlan replaces the notebook, the calculator and the long WhatsApp threads.</p>
+        </div>
+
+        <ol class="steps">
+          <li class="step">
+            <span class="step-num" aria-hidden="true">1</span>
+            <h3>Create your event</h3>
+            <p>Name your festival, set a chanda goal and add your committee members.</p>
+          </li>
+          <li class="step">
+            <span class="step-num" aria-hidden="true">2</span>
+            <h3>Collect and plan</h3>
+            <p>Record chanda, assign volunteers and log spending as it happens.</p>
+          </li>
+          <li class="step">
+            <span class="step-num" aria-hidden="true">3</span>
+            <h3>Share and close the books</h3>
+            <p>Send live updates to residents and download a final report when the festival ends.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- Pricing: monthly/yearly toggle and three plans. Prices sit in data- attributes; js/main.js swaps them -->
+    <section id="pricing" class="section">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">Pricing</p>
+          <h2>Simple pricing, in rupees</h2>
+          <p>Start free. Upgrade when your committee grows.</p>
+        </div>
+
+        <div class="billing" role="group" aria-label="Billing period">
+          <button type="button" class="billing-btn active" data-period="monthly" aria-pressed="true">Monthly</button>
+          <button type="button" class="billing-btn" data-period="yearly" aria-pressed="false">
+            Yearly <span class="save">2 months free</span>
+          </button>
+        </div>
+
+        <div class="pricing-grid">
+          <article class="card plan">
+            <h3>Starter</h3>
+            <p class="price"><span class="amount">₹0</span><span class="per">/forever</span></p>
+            <ul>
+              <li>1 event at a time</li>
+              <li>Up to 30 members</li>
+              <li>Chanda tracker</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline" data-plan="Starter">Choose Starter</a>
+          </article>
+
+          <article class="card plan featured">
+            <span class="badge">Most popular</span>
+            <h3>Club</h3>
+            <p class="price" data-monthly="299" data-yearly="2990">
+              <span class="amount">₹299</span><span class="per">/month</span>
+            </p>
+            <ul>
+              <li>Unlimited events</li>
+              <li>Up to 200 members</li>
+              <li>Volunteer roster</li>
+              <li>Budget vs actual</li>
+            </ul>
+            <a href="#contact" class="btn btn-primary" data-plan="Club">Choose Club</a>
+          </article>
+
+          <article class="card plan">
+            <h3>Society</h3>
+            <p class="price" data-monthly="799" data-yearly="7990">
+              <span class="amount">₹799</span><span class="per">/month</span>
+            </p>
+            <ul>
+              <li>Everything in Club</li>
+              <li>Unlimited members</li>
+              <li>Multiple admins</li>
+              <li>Final report download</li>
+            </ul>
+            <a href="#contact" class="btn btn-outline" data-plan="Society">Choose Society</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ: <details> gives an accordion without JavaScript -->
+    <section id="faq" class="section section-alt">
+      <div class="container">
+        <div class="section-head">
+          <p class="eyebrow">FAQ</p>
+          <h2>Quick answers</h2>
+        </div>
+
+        <div class="faq">
+          <details>
+            <summary>Do my members need to install anything?</summary>
+            <p>No. ParaPlan runs in any phone or computer browser.</p>
+          </details>
+          <details>
+            <summary>Can I try it before paying?</summary>
+            <p>Yes. The Starter plan is free forever for one event at a time.</p>
+          </details>
+          <details>
+            <summary>Is it only for Durga Puja?</summary>
+            <p>No. Use it for Saraswati Puja, Kali Puja, annual days, picnics or any event your para organises.</p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Call-to-action band -->
+    <section class="cta-band">
+      <div class="container cta-inner">
+        <div>
+          <h2>Ready to retire the notebook?</h2>
+          <p>Start with the free Starter plan and upgrade only when your committee grows.</p>
+        </div>
+        <a href="#contact" class="btn btn-light" data-plan="Starter">Get Started Free</a>
+      </div>
+    </section>
+
+    <!-- Contact: demo request form (front-end validation only, no backend) -->
+    <section id="contact" class="section">
+      <div class="container contact-inner">
+        <div class="contact-info">
+          <p class="eyebrow">Contact</p>
+          <h2>Request a demo</h2>
+          <p class="lead">Tell us about your club and we will show you ParaPlan in 15 minutes.</p>
+          <ul class="contact-list">
+            <li><strong>Email:</strong> hello@paraplan.example</li>
+            <li><strong>Hours:</strong> Mon to Sat, 10am to 6pm IST</li>
+            <li><strong>Based in:</strong> Kolkata, West Bengal</li>
+          </ul>
+        </div>
+
+        <form id="contact-form" class="card form" novalidate>
+          <div class="field">
+            <label for="name">Full name</label>
+            <input id="name" type="text" autocomplete="name" aria-describedby="name-error">
+            <small id="name-error" class="error"></small>
+          </div>
+
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" type="email" autocomplete="email" aria-describedby="email-error">
+            <small id="email-error" class="error"></small>
+          </div>
+
+          <div class="field">
+            <label for="plan">Plan you are interested in</label>
+            <select id="plan">
+              <option value="Starter">Starter (free)</option>
+              <option value="Club">Club</option>
+              <option value="Society">Society</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message">Tell us about your club</label>
+            <textarea id="message" rows="4" aria-describedby="message-error"></textarea>
+            <small id="message-error" class="error"></small>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-block">Request demo</button>
+          <p id="form-success" class="success" role="status" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div>
+        <p class="logo footer-logo">
+          <svg class="logo-mark" viewBox="0 0 24 24" aria-hidden="true">
+            <path class="lamp" d="M3 14h18c0 4-3.5 6-9 6s-9-2-9-6z"/>
+            <path class="flame" d="M12 3c2 2.5 3 4 3 5.5a3 3 0 0 1-6 0C9 7 10 5.5 12 3z"/>
+          </svg>
+          <span>Para<span class="logo-accent">Plan</span></span>
+        </p>
+        <p class="footer-blurb">Chanda, volunteers and budgets for neighbourhood clubs.</p>
+      </div>
+      <ul class="footer-links">
+        <li><a href="#features">Features</a></li>
+        <li><a href="#pricing">Pricing</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+    <div class="container">
+      <p class="footer-legal">
+        &copy; 2026 ParaPlan. A sample project built for the Sankar Group front-end assignment. Not a real product.
+      </p>
+    </div>
+  </footer>
+
+  <script src="js/main.js" defer></script>
+</body>
+</html>
