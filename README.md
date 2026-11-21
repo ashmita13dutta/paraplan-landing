@@ -6,6 +6,8 @@ Built for the Sankar Group front-end internship assignment.
 
 **Live site:** https://ashmita13dutta.github.io/paraplan-landing/
 
+**Source code:** https://github.com/ashmita13dutta/paraplan-landing
+
 ## Screenshots
 
 | Desktop (1280px) | Tablet (768px) | Phone (390px) |
